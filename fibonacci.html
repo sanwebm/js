@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Функция рекурсивного замыкания fibonacci(number1, number2)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+</head>
+<body>
+
+<script>
+// НЕ ПОДСМАТРИВАЛ, КАК РЕШАЕТСЯ ЭТА ЗАДАЧА В ИНТЕРНЕТЕ
+// fibonacci(number1, number2) - функия, печатает числа Фибоначчи (Леонардо Пизанского), начиная с 
+// первых двух известных чисел Фибоначчи (number1 и number2) самой последовательности.
+// Пример входных первых двух чисел 0 и 1, 1 и 1, 55 и 89... 
+// fibonacci - функция рекурсивного замыкания.
+// Number.MAX_VALUE — числовая константа, максимальное представимое значение JavaScript.
+// fibonacci2() - функия, печатает числа Фибоначчи от 0,1...
+
+var fibonacci = function( number1, number2 ){
+
+	if( number1 + number2 > Number.MAX_VALUE ) {
+		console.log( number1 + '\n' + number2 );
+		return console.log('The next number of Fibonacci Sequence can not be calculated, it\'s bigger than Number.MAX_VALUE');
+	}
+
+	console.log( number1);
+
+	return ( 
+			fibonacci( number2, number1 + number2 )
+		 );
+}
+
+fibonacci(55,89);
+
+var fibonacci2 = function( number1, number2 ){
+
+	if ( !number1 && !number2) { 
+		console.log(0+'\n'+1);
+	}
+	
+	number1 = number1 || 0;
+	number2 = number2 || 1;
+		
+	if( number1 + number2 > Number.MAX_VALUE ) {
+		return console.log('The next number of Fibonacci Sequence can not be calculated, it\'s bigger than Number.MAX_VALUE');
+	}
+
+	console.log( number1 + number2 );
+
+	return ( 
+			fibonacci2( number2, number1 + number2 )
+		 );
+}
+
+fibonacci2();
+</script>
+</body>
+</html>
