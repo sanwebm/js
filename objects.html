@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects - Lesson 3</title>
+</head>
+<body>
+
+<script>
+
+
+
+    function average(){
+
+        var sum=0;
+
+        for(var i=0; i< arguments.length; i++){
+            sum=sum+arguments[i];
+        }
+
+        return sum/arguments.length;
+    }
+
+    console.time('Average time');
+    console.log( average(2,3,70) );
+    console.timeEnd('Average time');
+    /*
+
+    var user = {};
+    user.name = "Neo";
+    user.age = 21;
+
+    var user2 = {
+        city:'Minsk',
+        country:'Belarus',
+        0:'zero'
+    };
+
+    var pet ={
+        name: 'Jhon',
+        price: 25,
+        currency: 'USD',
+        hello: show
+    };
+
+    var pet2 ={
+        name: 'Bil',
+        price: 125,
+        currency: 'EUR',
+        hello: show
+    };
+
+    function show(){
+        console.log('Hello, my name is ' + this.name + '. My price is '+this.price + ' ' + this.currency);
+    }
+
+
+    pet.hello();
+    // pet['hello']();
+
+    pet2.hello();
+    // pet2['hello']();
+
+
+*/
+
+</script>
+
+
+</body>
+</html>
